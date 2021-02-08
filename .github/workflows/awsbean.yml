@@ -1,9 +1,9 @@
 name: Master Build
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
  
 
@@ -24,7 +24,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore /p:DebugType=None
     
     - name: Publish
-      run: dotnet publish Cicdpracdemoapp/Cicdpracdemoapp.csproj -o Publish/Cicdpracdemoapp/ -r win-x64 --self-contained false /p:DebugType=None
+      run: dotnet publish Cicdpracdemoapp/Cicdpracdemoapp.csproj -o Publish/Cicdpracdemoapp/ -r win-x64 --self-contained true /p:DebugType=None
     
     - name: Easy Zip Files
     # You may pin to the exact commit or the version.
